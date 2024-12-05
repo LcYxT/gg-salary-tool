@@ -92,10 +92,11 @@ const SalaryCalculator = () => {
           {result.map((data, index) => (
             <div key={index} style={{ marginBottom: '15px' }}>
               {index === 0 ? <h4>第 {data.year} 年 ({joinMonth} - 12月) </h4> : <h4>第 {data.year} 年 (1 - 12月) </h4>}
-              <p>底薪 (14 個月): {data.baseSalary.toFixed(2)} NTD</p>
+              {/* <p>底薪 (14 個月): {data.baseSalary.toFixed(2)} NTD</p> */}
               <p>當年季分紅: {data.seasonBonus.toFixed(2)} NTD</p>
               <p>(7月)年分紅: {data.annualBonus.toFixed(2)} NTD</p>
-              <p>總收入: {data.totalIncome.toFixed(2)} NTD</p>
+              <p>當年總分紅: {(data.seasonBonus + data.annualBonus).toFixed(2)} NTD</p>
+              {/* <p>總收入: {data.totalIncome.toFixed(2)} NTD</p> */}
             </div>
           ))}
         </div>
